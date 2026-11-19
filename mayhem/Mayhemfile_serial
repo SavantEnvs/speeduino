@@ -1,0 +1,11 @@
+project: savantenvs/speeduino
+target: serial
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/serial/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_serial
+    libfuzzer: true
+    timeout: 10
